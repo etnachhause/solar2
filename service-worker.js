@@ -9,6 +9,7 @@ var filesToCache = [
   'bilder/euro.png',
   'bilder/sonne.png',
   'bilder/sonne144.png'
+'bilder/touch-icon-iphone.png'	
 ];
 
 	latestCacheName = 'App-Shell-v1';
