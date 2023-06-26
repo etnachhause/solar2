@@ -13,11 +13,6 @@
       "src": "bilder/touch-icon-iphone.png",
       "sizes": "128x128",
       "type": "image/png"
-   },
-   {
-      "src": "bilder/touch-icon-iphone_144.png",
-      "sizes": "144x144",
-      "type": "image/png"
    }
    ]
    
