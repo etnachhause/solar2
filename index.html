@@ -52,6 +52,8 @@
 				showErtrag();
 
 			};
+			var http=require('http');
+			
 			function showLeistung(){
 
 				var now=0.0;
@@ -62,15 +64,20 @@
 				var url  ='http://voyager:enterprise@10.10.100.254/status.html';
 				console.log(url);
 
-
-				var res=Get(url);
-
-				var str = "";
-
-				res.on('data', function (chunk) {
-						str += chunk;
-					});
-
+				 http.get(url, function(res){
+			        var str = "";
+			        console.log('Response is '+res.statusCode);
+			 
+			        if (res.statusCode != 200) {
+			            console.log("non-200 response status code:", res.statusCode);
+			            console.log("for url:", SolarUrl);
+			            res.resume();
+			            return;
+			        }
+			 
+			        res.on('data', function (chunk) {
+			                str += chunk;
+			        });			 			       
 				res.on('end', function () {
 					var arr = str.split("\n");
 					now=readSolData(arr, "webdata_now_p", true);
