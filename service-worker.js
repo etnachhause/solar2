@@ -35,16 +35,21 @@ var filesToCache = [
 	  );
 	});
 
-	self.addEventListener('fetch', function (event) {
-	  event.respondWith(
-		caches.match(event.request)
-		.then(function (response) {
-		  if (response) {
-			return response;
-		  } else {
-			return fetch(event.request);
-		  }
-		})
-	  );
+	self.addEventListener("fetch", event => {
+    if (event.request.url === "https://www.etnachhause.github.io/solar2.index.html") {
+        // or whatever your app's URL is
+        event.respondWith(
+            fetch(event.request).catch(err =>
+                self.cache.open(cache_name).then(cache => cache.match("/offline.html"))
+            )
+        );
+    } else {
+        event.respondWith(
+            fetch(event.request).catch(err =>
+                caches.match(event.request).then(response => response)
+            )
+        );
+    }
+});
    });
 
