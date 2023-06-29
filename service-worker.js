@@ -1,4 +1,10 @@
-var filesToCache = [
+
+latestCacheName = 'App-Shell-v1';
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+	caches.open(latestCacheName)
+	  .then((cache) => { 
+	 return cache.addAll(([
   '/',
   '/index.html',
   '/manifest.json',
@@ -9,15 +15,9 @@ var filesToCache = [
   '/bilder/sonne.png',
   '/bilder/sonne144.png',
 '/bilder/touch-icon-iphone.png'	
-];
-
-latestCacheName = 'App-Shell-v1';
-self.addEventListener('install', function (event) {
-  event.waitUntil(
-	caches.open(latestCacheName)
-	  .then((cache) => { 
-	 return cache.addAll((filesToCache)})
-  );
+]);
+})
+);
 });
 
 self.addEventListener('fetch', (event) => { 
