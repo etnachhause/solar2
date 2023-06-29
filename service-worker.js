@@ -1,4 +1,6 @@
 var filesToCache = [
+	'.',
+	'/',
 	'manifest.json',
 	'service-worker.js',
 	'index.html',
