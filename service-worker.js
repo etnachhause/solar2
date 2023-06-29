@@ -22,13 +22,11 @@ self.addEventListener('install', function (event) {
   );
 });
 
-self.addEventListener("fetch", event =>    
-        event.respondWith(
-            fetch(event.request).catch(err =>
-                caches.match(event.request).then((response) => { 
- 		return response || fetch(event.request); 
-		})
-        );   
-});
+self.addEventListener('fetch', (event) => { 
+ 	event.respondWith( caches.match(event.request).then((response) => { 
+		return response || fetch(event.request); 
+	}) 
+    ); 
+}); 
   
 
