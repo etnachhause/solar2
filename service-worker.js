@@ -1,7 +1,14 @@
 var filesToCache = [
 '.',
 '/',
-'index.html'
+'/manifest.json',
+  '/service-worker.js',
+  '/bilder/favicon.ico',
+  '/bilder/sonne.png',
+  '/bilder/euro.png',
+  '/bilder/sonne.png',
+  '/bilder/sonne144.png',
+'/bilder/touch-icon-iphone.png'	
 ];
 var latestCacheName = 'V1';
 
