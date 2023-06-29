@@ -15,10 +15,8 @@ latestCacheName = 'App-Shell-v1';
 self.addEventListener('install', function (event) {
   event.waitUntil(
 	caches.open(latestCacheName)
-	  .then(function (cache) {
-		return cache.addAll(filesToCache)
-		
-	  })
+	  .then((cache) => { 
+	 return cache.addAll((filesToCache)})
   );
 });
 
