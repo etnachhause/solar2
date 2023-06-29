@@ -1,5 +1,4 @@
 var filesToCache = [
-  '.',
   '/',
   '/index.html',
   '/manifest.json',
@@ -18,7 +17,7 @@ var filesToCache = [
 		caches.open(latestCacheName)
 		  .then(function (cache) {
 			return cache.addAll(filesToCache)
-			.then(() => self.skipWaiting());
+			
 		  })
 	  );
 	});
