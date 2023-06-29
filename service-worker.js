@@ -11,35 +11,24 @@ var filesToCache = [
 '/bilder/touch-icon-iphone.png'	
 ];
 
-	latestCacheName = 'App-Shell-v1';
-	self.addEventListener('install', function (event) {
-	  event.waitUntil(
-		caches.open(latestCacheName)
-		  .then(function (cache) {
-			return cache.addAll(filesToCache)
-			
-		  })
-	  );
-	});
+latestCacheName = 'App-Shell-v1';
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+	caches.open(latestCacheName)
+	  .then(function (cache) {
+		return cache.addAll(filesToCache)
+		
+	  })
+  );
+});
 
-	
-
-	self.addEventListener("fetch", event => {
-    if (event.request.url === "https://www.etnachhause.github.io/solar2.index.html") {
-        // or whatever your app's URL is
-        event.respondWith(
-            fetch(event.request).catch(err =>
-                self.cache.open(cache_name).then(cache => cache.match("/index.html"))
-            )
-        );
-    } else {
+self.addEventListener("fetch", event =>    
         event.respondWith(
             fetch(event.request).catch(err =>
                 caches.match(event.request).then((response) => { 
  		return response || fetch(event.request); 
-            )
-        );
-    }
+		})
+        );   
 });
   
 
