@@ -1,7 +1,5 @@
 var filesToCache = [
-'.',
-'/',
-'service-worker.js',
+'service-worker.js'
 ];
 var latestCacheName = 'V1';
 
