@@ -21,7 +21,7 @@ self.addEventListener('install', function (event) {
 	        cache.add(file).catch(_=>console.error(`can't load ${file} to cache`))
 	    ));
 	    return Promise.all(stack);
-};
+});
  
 );
 })
