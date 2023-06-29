@@ -5,7 +5,6 @@ var filesToCache = [
 	'bilder/favicon.ico',
 	'bilder/sonne.png',
 	'bilder/euro.png',
-	'bilder/sonne.png',
 	'bilder/sonne144.png',
 	'bilder/touch-icon-iphone.png'	
 ];
