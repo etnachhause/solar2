@@ -1,8 +1,9 @@
 var filesToCache = [
- '/',
-  '/index.html'
+'.',
+'/',
+'index.html'
 ];
-var latestCacheName = 'App-Shell-v1';
+var latestCacheName = 'V1';
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
