@@ -2,7 +2,7 @@
   "name": "solar",
   "short_name": "Solar",
   "description": "my first solar PWA",
-  "start_url": "index.html",
+  "start_url": "https://etnachhause.github.io/solar2/index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
